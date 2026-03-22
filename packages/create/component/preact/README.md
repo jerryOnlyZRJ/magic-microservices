@@ -16,9 +16,9 @@ Add the following code to your page.
 ```html
 <script src="https://unpkg.bytedance.net/@byted-cg/magic-microservice/latest/dist/index.umd.min.js"></script>
 <script type="module">
-  import * as MyComponent from 'https://unpkg.bytedance.net/@byted-cg/magic-microservice-component-react/latest/dist/index.esm.browser.js';
+  import * as MyComponent from 'https://unpkg.bytedance.net/@magic-microservices/component-preact/latest/dist/index.esm.browser.js';
   magic('my-component', MyComponent, {
-    styles: ['https://unpkg.bytedance.net/@byted-cg/magic-microservice-component-react/latest/dist/index.min.css'],
+    styles: ['https://unpkg.bytedance.net/@magic-microservices/component-preact/latest/dist/index.min.css'],
   });
 </script>
 ```
@@ -44,14 +44,14 @@ The easiest way to get this component is with the CDN. There are three normal wa
 #### SystemJS
 
 ```javascript
-magic('my-component', System.import('https://unpkg.bytedance.net/@byted-cg/magic-microservice-component-react/latest/dist/index.system.min.js'))
+magic('my-component', System.import('https://unpkg.bytedance.net/@magic-microservices/component-preact/latest/dist/index.system.min.js'))
 ```
 
 #### ES Module
 
 ```html
 <script type="module">
-import MyModule from 'https://unpkg.bytedance.net/@byted-cg/magic-microservice-component-react/latest/dist/index.esm.browser.min.js'
+import MyModule from 'https://unpkg.bytedance.net/@magic-microservices/component-preact/latest/dist/index.esm.browser.min.js'
 magic('my-component', MyModule)
 </script>
 ```
@@ -61,7 +61,7 @@ magic('my-component', MyModule)
 Import the UMD bundle at first:
 
 ```html
-<script src="https://unpkg.bytedance.net/@byted-cg/magic-microservice-component-react/latest/dist/index.umd.min.js"></script>
+<script src="https://unpkg.bytedance.net/@magic-microservices/component-preact/latest/dist/index.umd.min.js"></script>
 ```
 
 Now this component will be added in the window with a camelcase name：
@@ -75,13 +75,13 @@ magic('my-component', window.MagicQuillComponent)
 If you don't want to use the CDN, you can install this component locally with the following command.
 
 ```shell
-$ npm install @byted-cg/magic-microservice-component-react
+$ npm install @magic-microservices/component-preact
 ```
 
 And then, you can register it anywhere you want:
 
 ```js
-import * as MagicQuillComponent from @byted-cg/magic-microservice-component-react
+import * as MagicQuillComponent from @magic-microservices/component-preact
 magic('my-component', MagicQuillComponent)
 ```
 

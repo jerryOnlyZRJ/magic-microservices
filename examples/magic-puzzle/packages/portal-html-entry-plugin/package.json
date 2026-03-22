@@ -1,5 +1,5 @@
 {
-  "name": "@byted-cg/portal-html-entry-plugin",
+  "name": "@magic-microservices/portal-html-entry-plugin",
   "version": "0.0.1",
   "description": "portal-htmlentry-plugin",
   "moduleName": "portalHtmlPlugin",

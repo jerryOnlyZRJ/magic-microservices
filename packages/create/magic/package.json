@@ -1,5 +1,5 @@
 {
-    "name": "@byted-cg/magic-microservice-cli",
+    "name": "@magic-microservices/create-magic",
     "version": "1.0.5",
     "description": "magic 微应用脚手架 CLI 工具",
     "bin": {

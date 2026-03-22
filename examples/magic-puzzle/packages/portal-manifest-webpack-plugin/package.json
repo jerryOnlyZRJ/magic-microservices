@@ -1,5 +1,5 @@
 {
-  "name": "@byted-cg/puzzle-manifest-webpack-plugin",
+  "name": "@magic-microservices/puzzle-manifest-webpack-plugin",
   "version": "0.0.2",
   "description": "portal-webpack-plugin",
   "keywords": [

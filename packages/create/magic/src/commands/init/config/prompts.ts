@@ -30,7 +30,7 @@ export default {
         type: 'input',
         name: 'packageName',
         default: (answers: InitAnswers): string => {
-            return `@byted-cg/${answers.name}`
+            return `@magic-microservices/${answers.name}`
         },
         message: '请输入组件的 npm 包名：',
         validate: function(input): string | true {

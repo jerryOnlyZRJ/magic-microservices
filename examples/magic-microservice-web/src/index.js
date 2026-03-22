@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom'
 import EventEmiter from 'wolfy87-eventemitter'
 
 import magic, { useProps } from '@magic-microservices/magic'
-import * as ReactModule from '@byted-cg/magic-microservice-component-react'
-import * as VueModule from '@byted-cg/magic-microservice-component-vue'
+import * as ReactModule from '@magic-microservices/component-react'
+import * as VueModule from '@magic-microservices/component-vue'
 
 class MagicPlugin {
   apply(lifeCycle) {

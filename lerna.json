@@ -1,0 +1,17 @@
+{
+  "packages": ["packages/*", "examples/*"],
+  "version": "independent",
+  "command": {
+    "bootstrap": {
+      "npmClientArgs": ["--no-package-lock"]
+    },
+    "publish": {
+      "ignoreChanges": ["**/__tests__/**", "**/*.spec.js", "**/*.spec.ts", "test/**", "tests/**", "*.md", "**/CHANGELOG.md", "**/package-lock.json"],
+      "message": "chore(release): publish"
+    },
+    "version": {
+      "allowBranch": ["main", "refactor/monorepo", "release-*"],
+      "conventionalCommits": true
+    }
+  }
+}
