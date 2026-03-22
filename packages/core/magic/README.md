@@ -186,6 +186,29 @@ Below is a diagram for the instance lifecycle. You don’t need to fully underst
 
 ![lifecycle diagram](https://sf16-va.tiktokcdn.com/obj/eden-va2/lpqulynulog/magic/module-lifecycle.png)
 
+#### Magic Options
+
+The third argument of `magic()` accepts an options object:
+
+```javascript
+magic('my-component', MyModule, {
+  // Declare prop types for attributeChangedCallback to work correctly
+  // Without this, Web Components won't detect attribute changes
+  propTypes: {
+    id: Number,
+    test: Boolean,
+    callback: Function,
+    count: Number,
+  },
+  // External CSS files injected into the Shadow DOM (if shadow mode enabled)
+  styles: ['https://xxx.a.css', 'https://xxx.b.css'],
+  // External JS resources loaded before the module mounts
+  scripts: ['https://xxx.a.js', 'https://xxx.b.js'],
+});
+```
+
+> **Note:** `propTypes` is required for the Web Components `attributeChangedCallback` to fire. Without it, attribute-based updates and event listeners will not work. See [MDN Web Components spec](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#Using_the_lifecycle_callbacks) for details.
+
 #### Code Example
 
 You can refer to the two code snippets using React and Vue (3) below to implement your own JS module.
@@ -221,10 +244,12 @@ export async function unmount() {
 ##### Vue (3):
 
 ```javascript
-import Vue from 'vue/index';
-import App from './component/Hello.vue';
+import { createApp } from 'vue';
+import App from './App.vue';
 
-let vueInstance = null;
+// Use WeakMap to support multiple instances on the same page
+// Each container is uniquely identified and maps to its own Vue instance
+const vueInstanceMap = new WeakMap();
 
 export async function bootstrap() {
   console.log('vue app bootstraped');
@@ -232,22 +257,24 @@ export async function bootstrap() {
 
 export async function mount(container, props) {
   console.log('magic-microservices-component-vue mount >>> ', props);
-  vueInstance = Vue.createApp({
+  const vueInstance = createApp({
     ...App,
     data() {
       return props;
     },
   }).mount(container);
+  vueInstanceMap.set(container, vueInstance);
 }
 
-export async function updated(attrName, value) {
-  console.log('magic-microservices-component-vue update', attrName, ' >>> ', value);
+export async function updated(attrName, value, container) {
+  const vueInstance = vueInstanceMap.get(container);
   vueInstance[attrName] = value;
   vueInstance.$forceUpdate();
 }
 
-export async function unmount() {
-  console.log('vue app will unmount');
+export async function unmount(magicInstance, container) {
+  const vueInstance = vueInstanceMap.get(container);
+  vueInstance.unmount();
 }
 ```
 
