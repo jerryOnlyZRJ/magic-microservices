@@ -1,0 +1,14 @@
+#node_modules
+node_modules/
+
+#dist
+lib/
+
+#MAC
+.DS_Store
+
+#package-lock.json
+package-lock.json
+
+#tests
+tests/logs/

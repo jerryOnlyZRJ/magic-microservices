@@ -1,0 +1,13 @@
+module.exports = {
+  files2copy: [],
+  files2Render: [
+    {
+      input: 'package.json',
+      output: 'package.json',
+    },
+    {
+      input: 'README.md',
+      output: 'README.md',
+    },
+  ],
+};

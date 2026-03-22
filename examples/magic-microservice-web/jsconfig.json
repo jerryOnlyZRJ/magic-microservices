@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "api": ["src/api/index.js"],
+      "fetch": ["src/utils/fetch/index.js"]
+    }
+  }
+}

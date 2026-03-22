@@ -1,0 +1,12 @@
+.DS_STORE
+*.log
+
+node_modules
+src/config/userLogin.js
+
+dist
+output
+coverage
+.idea/
+deploy.sh
+byted-antx

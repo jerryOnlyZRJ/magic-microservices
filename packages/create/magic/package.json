@@ -1,0 +1,68 @@
+{
+    "name": "@byted-cg/magic-microservice-cli",
+    "version": "1.0.5",
+    "description": "magic 微应用脚手架 CLI 工具",
+    "bin": {
+        "magic": "lib/bin/index.js"
+    },
+    "files": [
+        "lib"
+    ],
+    "publishConfig": {
+        "registry": "http://bnpm.byted.org"
+    },
+    "scripts": {
+        "test": "scripty",
+        "build": "scripty",
+        "build:dev": "scripty",
+        "prepublishOnly": "scripty"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "validate-commit-msg"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,ts}": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^12.0.2",
+        "@typescript-eslint/eslint-plugin": "^2.15.0",
+        "@typescript-eslint/parser": "^2.15.0",
+        "eslint": "^5.16.0",
+        "husky": "^2.3.0",
+        "jest": "^25.2.4",
+        "lint-staged": "^8.1.7",
+        "normalize-package-data": "^2.5.0",
+        "prettier": "^1.19.1",
+        "scripty": "^1.9.1",
+        "ttypescript": "^1.5.10",
+        "typescript": "^3.7.4",
+        "typescript-transform-paths": "^1.1.14",
+        "validate-commit-msg": "^2.14.0"
+    },
+    "dependencies": {
+        "@sentry/node": "^5.10.2",
+        "chalk": "^2.4.2",
+        "commander": "^2.20.0",
+        "consolidate": "^0.15.1",
+        "didyoumean": "^1.2.1",
+        "envinfo": "^7.3.1",
+        "fs-extra": "^9.0.1",
+        "glob": "^7.1.4",
+        "inquirer": "^6.5.0",
+        "jscodeshift": "^0.10.0",
+        "node-notifier": "^9.0.1",
+        "ora": "^3.4.0",
+        "posthtml": "^0.13.3",
+        "rimraf": "^2.6.3",
+        "swig": "^1.4.2"
+    }
+}

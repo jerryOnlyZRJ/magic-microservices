@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%=htmlWebpackPlugin.options.title%></title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <style type="text/css" media="screen">
+      @-webkit-keyframes svg-loading-outer {
+        0% {
+          transform: rotate(0deg);
+          /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+          transform: rotate(360deg);
+          /* Firefox 16+, IE 10+, Opera */
+        }
+      }
+      @-moz-keyframes svg-loading-outer {
+        0% {
+          -moz-transform: rotate(0deg);
+          /* Firefox 16+*/
+        }
+        100% {
+          -moz-transform: rotate(360deg);
+          /* Firefox 16+*/
+        }
+      }
+      @keyframes svg-loading-outer {
+        0% {
+          transform: rotate(0deg);
+          /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+          transform: rotate(360deg);
+          /* Firefox 16+, IE 10+, Opera */
+        }
+      }
+
+      @-webkit-keyframes svg-loading-inner {
+        0% {
+          transform: rotate(360deg);
+          /* Firefox 16+*/
+        }
+        100% {
+          /* Firefox 16+*/
+          transform: rotate(0deg);
+        }
+      }
+      @-moz-keyframes svg-loading-inner {
+        0% {
+          -moz-transform: rotate(360deg);
+          /* Firefox 16+*/
+        }
+        100% {
+          /* Firefox 16+*/
+          -moz-transform: rotate(0deg);
+        }
+      }
+      @keyframes svg-loading-inner {
+        0% {
+          transform: rotate(360deg);
+          /* Firefox 16+*/
+        }
+        100% {
+          /* Firefox 16+*/
+          transform: rotate(0deg);
+        }
+      }
+
+      #preloader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        background: #fff;
+        backface-visibility: hidden;
+      }
+
+      #preloader .svg-loading-outer {
+        animation: svg-loading-outer 2s linear infinite;
+        transform-origin: 50%;
+      }
+
+      #preloader .svg-loading-inner {
+        animation: svg-loading-inner 2s linear infinite;
+        transform-origin: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <magic-component-esm-react id="magic-component-esm-react" test>custom-component-esm</magic-component-esm-react>
+    <magic-component-esm-vue id="magic-component-esm-vue" test name="Jerry"></magic-component-esm-vue>
+    <magic-component-esm-vue id="magic-component-esm-vue" test name="Tom"></magic-component-esm-vue>
+    <!-- <quill-component style="display: flex;width: 600px;height: 200px;"></quill-component> -->
+    <div id="root" style="height: 100%;"></div>
+    <script
+      src="https://s0.pstatp.com/cdn/expire-1-M/react/16.8.6/umd/react.development.js"
+      type="application/javascript"
+    ></script>
+    <script
+      src="https://s3.pstatp.com/cdn/expire-1-M/react-dom/16.8.6/umd/react-dom.development.js"
+      type="application/javascript"
+    ></script>
+    <script
+      src="https://s0.pstatp.com/cdn/expire-1-M/prop-types/15.7.2/prop-types.js"
+      type="application/javascript"
+    ></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.0-rc.5/vue.runtime.global.js"></script>
+    <script src="https://unpkg.com/@magic-microservices/magic@latest/dist/index.umd.min.js"></script>
+    <!-- <script type="module">
+      import * as MyComponent from 'https://unpkg.pstatp.com/byted-cg/magic-quill-component/1.0.3/dist/index.esm.browser.js';
+      magic('quill-component', MyComponent, {
+        styles: ['https://unpkg.pstatp.com/byted-cg/magic-quill-component/1.0.3/dist/index.min.css'],
+      });
+    </script> -->
+    <script type="module">
+      import magic from 'https://unpkg.com/@magic-microservices/magic@latest/dist/index.esm.browser.js'
+      import * as ReactModule from 'https://unpkg.pstatp.com/byted-cg/magic-microservice-component-react/1.0.3/dist/index.esm.browser.js'
+      magic('magic-component-esm-react', ReactModule, {
+        shadow: true,
+        propTypes: {
+          id: String,
+          test: Boolean,
+          callback: Function,
+        },
+        styles: ['https://unpkg.pstatp.com/byted-cg/magic-microservice-component-react/1.0.3/dist/index.min.css'],
+      })
+    </script>
+    <script type="module">
+      import magic from 'https://unpkg.com/@magic-microservices/magic@latest/dist/index.esm.browser.js'
+      import * as VueModule from 'https://unpkg.pstatp.com/byted-cg/magic-microservice-component-vue/1.0.3/dist/index.esm.browser.js'
+      magic('magic-component-esm-vue', VueModule, {
+        propTypes: {
+          id: String,
+          test: Boolean,
+          name: String,
+          count: Number,
+        },
+        styles: ['https://unpkg.pstatp.com/byted-cg/magic-microservice-component-vue/1.0.3/dist/index.min.css'],
+      })
+    </script>
+    <!-- systemjs -->
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/systemjs/3.1.6/system.js" type="application/javascript"></script>
+    <script type="module">
+      import magic from 'https://unpkg.com/@magic-microservices/magic@latest/dist/index.esm.browser.js'
+      magic(
+        'magic-component-react-system',
+        System.import(
+          'https://unpkg.pstatp.com/byted-cg/magic-microservice-component-react/1.0.3/dist/index.system.js',
+        ),
+        {
+          shadow: true,
+          propTypes: {
+            id: String,
+            test: Boolean,
+            callback: Function,
+            count: Number,
+          },
+          styles: ['https://unpkg.pstatp.com/byted-cg/magic-microservice-component-react/1.0.3/dist/index.min.css'],
+        },
+      )
+    </script>
+    <script type="module">
+      import magic from 'https://unpkg.com/@magic-microservices/magic@latest/dist/index.esm.browser.js'
+      magic(
+        'magic-component-vue-system',
+        System.import('https://unpkg.pstatp.com/byted-cg/magic-microservice-component-vue/1.0.3/dist/index.system.js'),
+        {
+          propTypes: {
+            id: String,
+            test: Boolean,
+            name: String,
+            count: Number,
+          },
+          styles: ['https://unpkg.pstatp.com/byted-cg/magic-microservice-component-vue/1.0.3/dist/index.min.css'],
+        },
+      )
+    </script>
+    <!-- umd -->
+    <script src="https://unpkg.pstatp.com/byted-cg/magic-microservice-component-react/1.0.3/dist/index.umd.js"></script>
+    <script src="https://unpkg.pstatp.com/byted-cg/magic-microservice-component-vue/1.0.3/dist/index.umd.js"></script>
+    <script type="text/javascript">
+      var env = '<%=htmlWebpackPlugin.options.env%>'
+      if (env !== 'production') {
+        window._EMPLOYEE_ = JSON.parse('<%=htmlWebpackPlugin.options.employeeConf%>')
+      } else {
+        window._EMPLOYEE_ = /*_EMPLOYEE_START*/ {
+          employeeId: '{{employee_id}}',
+          employeeName: '{{employee_name}}',
+          employeeMail: '{{email}}',
+        }
+      }
+    </script>
+  </body>
+</html>

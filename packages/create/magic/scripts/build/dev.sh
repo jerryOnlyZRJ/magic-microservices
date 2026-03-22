@@ -1,0 +1,1 @@
+ttsc --watch --sourceMap

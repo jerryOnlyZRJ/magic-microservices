@@ -1,0 +1,1 @@
+cross-env NODE_ENV=development=test karma start config/karma.config

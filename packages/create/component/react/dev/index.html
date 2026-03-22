@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component</title>
+  </head>
+  <body>
+    <my-component name="Jerry" count="1"></my-component>
+    <my-component name="Tom" count="2"></my-component>
+    <script src="http://unpkg.pstatp.com/react/17.0.1/umd/react.development.js" type="application/javascript"></script>
+    <script src="http://unpkg.pstatp.com/react-dom/17.0.1/umd/react-dom.development.js" type="application/javascript"></script>
+    <script src="https://unpkg.pstatp.com/prop-types/15.7.2/prop-types.js" type="application/javascript"></script>
+    <!-- <script src="https://unpkg.bytedance.net/@byted-cg/magic-microservice/latest/dist/index.umd.min.js"></script> -->
+    <script type="module">
+      import magic from 'https://unpkg.bytedance.net/@byted-cg/magic-microservice/latest/dist/index.esm.browser.js';
+      import * as componentModule from '../dist/index.esm.browser.js';
+      magic('my-component', componentModule, {
+        shadow: true,
+        propTypes: {
+          name: String,
+          count: Number,
+        },
+        styles: ['../dist/index.min.css'],
+      });
+    </script>
+    <script src="http://localhost:35729/livereload.js?snipver=1"></script>
+  </body>
+</html>

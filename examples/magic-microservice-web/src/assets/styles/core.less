@@ -1,0 +1,150 @@
+@import './table.less';
+@import './button.less';
+@import './scroll.less';
+@import './var.less';
+@import './cover.less';
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+audio {
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+.ant-calendar-today .ant-calendar-date {
+  color: #1890ff;
+  background: #fff;
+}
+
+.ant-divider {
+  position: relative;
+  top: -.06em;
+  display: inline-block;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 1px;
+  height: .9em;
+  padding: 0;
+  margin: 0 8px;
+  color: rgba(0, 0, 0, .65);
+  background: #e8e8e8;
+  vertical-align: middle;
+  font-size: 14px;
+  font-family:
+    'Monospaced Number',
+    'Chinese Quote',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'PingFang SC',
+    'Hiragino Sans GB',
+    'Microsoft YaHei',
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+}
+
+.action__column {
+  text-align: center;
+
+  > div {
+    text-align: center;
+  }
+}
+
+.action__btn {
+  color: #1890ff;
+  cursor: pointer;
+
+  &:hover {
+    color: #85b3f2;
+  }
+}
+
+.custom__datepicker {
+  width: 100%;
+}
+
+.ft-item {
+  display: flex;
+  align-items: center;
+  height: @header-height;
+  padding: 0 16px;
+  transition: all .3s;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .anticon-global {
+    font-size: 18px !important;
+  }
+}

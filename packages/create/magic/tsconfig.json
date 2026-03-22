@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "types": ["node"],
+        "module": "commonjs",
+        "target": "es5",
+        "outDir": "lib",
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "removeComments": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "plugins": [{ "transform": "typescript-transform-paths" }]
+    },
+    "include": ["src/**/*"],
+    "exclude": [
+        "src/commands/init/plugins/*/templates",
+    ]
+}

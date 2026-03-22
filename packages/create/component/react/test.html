@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <div style="width: '50px'">
+      <custom-component> </custom-component>
+      <custom-component1></custom-component1>
+    </div>
+    <script src="https://unpkg.com/@magic-microservices/magic@latest/dist/index.umd.js"></script>
+    <script>
+      magic('custom-component', {
+        mount: (container) => (container.innerHTML = '<div style="color:red">Hello magic!</div>'),
+      });
+      magic('custom-component1', {
+        mount: (container) => (container.innerHTML = '<div>PureHTML</div>'),
+      });
+    </script>
+  </body>
+</html>

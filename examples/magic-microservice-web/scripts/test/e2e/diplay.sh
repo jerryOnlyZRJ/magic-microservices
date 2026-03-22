@@ -1,0 +1,1 @@
+cross-env E2E_HEADLESS=false node tests/e2e/index.js
