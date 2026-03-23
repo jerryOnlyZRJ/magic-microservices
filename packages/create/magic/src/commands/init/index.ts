@@ -96,7 +96,7 @@ export default async function init(context): Promise<void> {
         )
         await deleteFile(magicCliRcPath)
         await installDependencies({ context: projectBasePath, prefix: '项目依赖初始化' })
-        if (['react', 'vue', 'svelte'].includes(framework)) {
+        if (['react', 'react18', 'vue', 'svelte'].includes(framework)) {
             await usePlugin(framework, projectBasePath)
         }
         await runShell('npm run lint:fix', path.resolve(context, name))

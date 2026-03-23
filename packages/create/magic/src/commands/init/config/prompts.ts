@@ -71,6 +71,10 @@ export default {
                 value: 'react',
             },
             {
+                name: 'React(v18)',
+                value: 'react18',
+            },
+            {
                 name: 'Vue(v3)',
                 value: 'vue',
             },
