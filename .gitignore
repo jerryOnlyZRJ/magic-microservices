@@ -33,3 +33,4 @@ examples/**/package-lock.json
 
 # Build artifacts
 *.tgz
+.DS_Store
