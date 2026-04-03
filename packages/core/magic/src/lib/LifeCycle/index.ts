@@ -65,9 +65,7 @@ export type LifeCycleHookType<Props extends {} = Record<string, unknown>> = Reco
   Hook<LifeCycleType<Props>, LifeCycleType<Props>>
 >;
 
-export type LifeCycleType<Props extends {} = Record<string, unknown>> =
-  | LifeCycle<Props>
-  | MagicInstanceType<Props>;
+export type LifeCycleType<Props extends {} = Record<string, unknown>> = LifeCycle<Props> | MagicInstanceType<Props>;
 
 interface IBuildFragmentOutput {
   htmlTagFragment: DocumentFragment;
@@ -80,6 +78,7 @@ export default class LifeCycle<Props extends {} = Record<string, unknown>> {
   public options: MagicOptions<Props>;
   public module: Module<Props>;
   public customElement: typeof CustomElementType;
+  public wrapperIdSeed = 0;
   public hooks: LifeCycleHookType<Props> = {} as LifeCycleHookType<Props>;
   public componentBuilder = (): void => customElements.define(this.name, this.customElement);
 
@@ -117,17 +116,23 @@ export default class LifeCycle<Props extends {} = Record<string, unknown>> {
   };
 
   private buildFragment = (): IBuildFragmentOutput => {
-    const { options } = this;
+    const { name, options } = this;
     const renderHtmlTags = (options.htmlTags || []).concat(
       ...Object.values(AliasTagTypes).map((tagType) => options[tagType] as HtmlTagObject[]),
     );
     const htmlTagFragment = renderHtmlTagObjectsToFragment(renderHtmlTags);
-    const contentWrapper = renderHtmlTagObjectToHtmlElement(
-      createHtmlTagObject('div', {
-        id: 'magic-wrapper',
-        style: 'height: 100%; width: 100%;',
-      }),
-    );
+    const contentWrapperAttributes: Record<string, string> = {
+      class: 'magic-wrapper',
+      'data-magic-wrapper': 'true',
+      style: 'height: 100%; width: 100%;',
+    };
+    if (options.shadow) {
+      contentWrapperAttributes.id = 'magic-wrapper';
+    } else {
+      this.wrapperIdSeed += 1;
+      contentWrapperAttributes.id = `${name}-wrapper-${this.wrapperIdSeed}`;
+    }
+    const contentWrapper = renderHtmlTagObjectToHtmlElement(createHtmlTagObject('div', contentWrapperAttributes));
     htmlTagFragment.appendChild(contentWrapper);
     return {
       htmlTagFragment,

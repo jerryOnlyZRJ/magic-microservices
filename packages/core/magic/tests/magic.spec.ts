@@ -25,6 +25,14 @@ function getDomByTagName(tagName: string): Element {
   return document.body.getElementsByTagName(tagName)[0];
 }
 
+function getWrapper(dom: Element): HTMLElement | null {
+  return dom.querySelector('.magic-wrapper');
+}
+
+function waitForMount(): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, 0));
+}
+
 describe('test magic', () => {
   test('test magic core', async (done) => {
     const testCustomHtmlTag = 'test-custom-tag';
@@ -99,12 +107,15 @@ describe('test magic', () => {
     );
 
     const magicDom = getDomByTagName(componentTag);
-    const magicWrapper = magicDom.querySelector('#magic-wrapper');
+    const magicWrapper = getWrapper(magicDom);
     const scriptTag = magicDom.querySelector('script');
     const linkTag = magicDom.querySelector('link');
     const styleTag = magicDom.querySelector('style');
     const customTag = magicDom.querySelector(`#${testCustomHtmlTag}`);
     expect(magicWrapper?.innerHTML).toBe(componentTag);
+    expect(magicWrapper?.id).toBe(`${componentTag}-wrapper-1`);
+    expect(magicWrapper?.getAttribute('data-magic-wrapper')).toBe('true');
+    expect(document.getElementById('magic-wrapper')).toBeNull();
     expect(scriptTag?.getAttribute('src')).toBe(testScriptLink);
     expect(linkTag?.getAttribute('href')).toBe(testStyleLink);
     expect(styleTag?.sheet?.cssRules[0].cssText).toBe(testStyleRules);
@@ -130,21 +141,32 @@ describe('test magic', () => {
     const createElementTestEle = document.createElement(createElementTest);
     createElementTestEle.setAttribute('id', testElementId);
     document.body.appendChild(createElementTestEle);
+    await waitForMount();
     const magicDom = document.body.getElementsByTagName(createElementTest)[0];
-    const magicWrapper = magicDom.querySelector('#magic-wrapper');
+    const magicWrapper = getWrapper(magicDom);
     expect(magicWrapper?.innerHTML).toBe(createElementTest);
+    expect(magicWrapper?.id).toBe(`${createElementTest}-wrapper-1`);
+    expect(magicWrapper?.getAttribute('data-magic-wrapper')).toBe('true');
   });
 
-  test('muti createElement', () => {
+  test('muti createElement', async () => {
     const createElementTest = 'create-element-test';
     const testElementId = 'create-element-test' + 2;
     const createElementTestEle = document.createElement(createElementTest);
     createElementTestEle.setAttribute('id', testElementId);
     document.body.appendChild(createElementTestEle);
+    await waitForMount();
     const magicDom = document.body.getElementsByTagName(createElementTest)[1];
     // const magicDom = getDomById(createElementTest) as Element;
-    const magicWrapper = magicDom.querySelector('#magic-wrapper');
+    const magicWrapper = getWrapper(magicDom);
     expect(magicWrapper?.innerHTML).toBe(createElementTest);
+    expect(magicWrapper?.id).toBe(`${createElementTest}-wrapper-2`);
+    const firstMagicDom = document.body.getElementsByTagName(createElementTest)[0];
+    const firstMagicWrapper = getWrapper(firstMagicDom);
+    expect(firstMagicWrapper?.id).not.toBe(magicWrapper?.id);
+    expect(firstMagicWrapper?.getAttribute('data-magic-wrapper')).toBe('true');
+    expect(magicWrapper?.getAttribute('data-magic-wrapper')).toBe('true');
+    expect(document.querySelectorAll('#magic-wrapper')).toHaveLength(0);
   });
 
   test('test shadow DOM', async () => {
@@ -163,7 +185,11 @@ describe('test magic', () => {
     );
     const shadowDom = document.body.getElementsByTagName(shadowComponentTag)[0];
     const shadowH1 = shadowDom.shadowRoot?.querySelector('h1');
+    const shadowWrapper = shadowDom.shadowRoot?.querySelector('.magic-wrapper');
     expect(shadowH1?.innerHTML).toBe('Hello world');
+    expect(shadowWrapper?.id).toBe('magic-wrapper');
+    expect(shadowWrapper?.getAttribute('data-magic-wrapper')).toBe('true');
+    expect(document.getElementById('magic-wrapper')).toBeNull();
     shadowDom.remove();
   });
 
