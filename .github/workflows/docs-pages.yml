@@ -33,11 +33,11 @@ jobs:
           cache-dependency-path: packages/docs/package-lock.json
 
       - name: Install docs dependencies
-        run: npm install --include=dev
+        run: npm install --include=dev --registry=https://registry.npmjs.org/
         working-directory: packages/docs
 
       - name: Build docs
-        run: npx vitepress build docs
+        run: npm run docs:build
         working-directory: packages/docs
 
       - name: Prepare Pages artifact
