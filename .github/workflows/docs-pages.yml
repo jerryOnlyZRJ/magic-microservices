@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'packages/docs/**'
-      - '.github/workflows/docs-pages.yml'
+      - "packages/docs/**"
+      - ".github/workflows/docs-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -33,7 +33,7 @@ jobs:
           cache-dependency-path: packages/docs/package-lock.json
 
       - name: Install docs dependencies
-        run: npm ci
+        run: npm ci --include=dev
         working-directory: packages/docs
 
       - name: Build docs
