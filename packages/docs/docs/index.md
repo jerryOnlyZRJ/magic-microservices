@@ -1,1 +1,101 @@
-# Hello VitePress
+---
+home: true
+heroImage: https://sf16-sg.tiktokcdn.com/obj/eden-sg/lpqulynulog/Magic/logo.qW4rU0mH6aL8.svg
+heroText: Magic Microservices
+tagline: 基于 Web Components 的轻量级微前端工厂函数
+actionText: 进入快速开始 →
+actionLink: /guide/getting-started
+features:
+  - title: Framework Freedom
+    details: 在 React、Vue、原生 JS 或任意框架中封装与复用同一套微应用能力。
+  - title: Tiny Runtime
+    details: 运行时体积轻，适合渐进式接入，不会把你的主应用改造成重型平台工程。
+  - title: Progressive Migration
+    details: 让新模块与旧系统并行演进，用标准 Custom Element 逐步替换遗留实现。
+  - title: Web Components Native
+    details: 借助浏览器原生 Custom Elements 与 Shadow DOM，把微前端落到标准能力之上。
+---
+
+<div class="magic-home-section">
+
+## 让微前端回到简单
+
+single-spa 证明了前端微服务可以把多个应用组合到同一页面中，并且允许团队自由选择技术栈。Magic 则进一步把落地成本压缩到一个更小、更直接的抽象：把你的模块注册成浏览器原生支持的自定义元素。
+
+这意味着你不必先搭建一套复杂的应用级编排层，也不需要把所有团队绑定在同一个框架约束里。只要你的模块符合 Magic 生命周期约定，它就可以像 `<user-profile-card />` 一样被消费。
+
+</div>
+
+<div class="magic-home-section">
+
+## 官方能力地图
+
+<div class="magic-grid">
+  <div class="magic-card">
+    <h3>封装模块</h3>
+    <p>把现有 React、Vue 或原生 JS 模块改造成符合 bootstrap / mount / updated / unmount 生命周期的 Magic Module。</p>
+  </div>
+  <div class="magic-card">
+    <h3>注册微应用</h3>
+    <p>通过 <code>magic()</code> 把模块注册成 Custom Element，可使用本地包、UMD、ESM 或 SystemJS 远端包。</p>
+  </div>
+  <div class="magic-card">
+    <h3>传递数据</h3>
+    <p>通过 <code>propTypes</code> 与 <code>useProps()</code> 支持字符串、布尔值、数字以及引用类型数据的安全透传。</p>
+  </div>
+  <div class="magic-card">
+    <h3>渐进式演进</h3>
+    <p>让新能力以组件粒度嵌入现有系统，适合微前端、组件服务化与多框架并存场景。</p>
+  </div>
+</div>
+
+</div>
+
+<div class="magic-home-section">
+
+## 为什么团队会选择 Magic
+
+<div class="magic-highlight">
+  <p>Magic 不是试图接管整个前端平台，而是提供一个足够小、足够稳定的能力内核，让团队把注意力放在业务模块拆分、部署边界和协作方式上。</p>
+  <ul>
+    <li>对旧系统友好：可以在现有页面里逐步接入，不要求一次性重构。</li>
+    <li>对框架中立：同一页面可以承载不同框架实现的微应用。</li>
+    <li>对交付直接：最终产物就是浏览器可识别的 HTML 标签。</li>
+    <li>对工程可控：模块生命周期清晰，便于管理挂载、副作用和卸载流程。</li>
+  </ul>
+</div>
+
+</div>
+
+<div class="magic-home-section">
+
+## 三步接入
+
+<div class="magic-pills">
+  <span class="magic-pill">1. 引入 Magic Runtime</span>
+  <span class="magic-pill">2. 注册你的微应用</span>
+  <span class="magic-pill">3. 通过 HTML 标签直接使用</span>
+</div>
+
+<div class="magic-code-block">
+
+```html
+<script src="https://unpkg.com/@magic-microservices/magic@latest/dist/index.umd.js"></script>
+<script>
+  magic('custom-component', {
+    mount: (container) => (container.innerHTML = 'Hello magic!'),
+  })
+</script>
+
+<custom-component></custom-component>
+```
+
+</div>
+
+继续阅读：
+
+- [快速开始](./guide/getting-started)
+- [核心概念](./guide/core-concepts)
+- [magic() API](./api/magic)
+
+</div>
