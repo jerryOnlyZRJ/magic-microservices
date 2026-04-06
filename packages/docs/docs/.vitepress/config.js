@@ -13,7 +13,8 @@ const siteUrl =
 const googleVerification =
   process.env.GOOGLE_SITE_VERIFICATION ||
   "SDkm2bW7CKiVVYBo5trHf6BspGWweJKfGuk-XJ9dRZg";
-const bingVerification = process.env.BING_SITE_VERIFICATION || "";
+const bingVerification =
+  process.env.BING_SITE_VERIFICATION || "668A0090D25C153B935D265BB4DEC5BB";
 const base =
   process.env.GITHUB_ACTIONS === "true" && !isUserPagesRepository
     ? `/${repoName}/`
