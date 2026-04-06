@@ -60,5 +60,7 @@ If you already know single-spa style solutions, you can think of Magic as a smal
 ## Next steps
 
 - Read [Core Concepts](./core-concepts) to understand the overall model
+- Read [Design Philosophy](./design-philosophy) to understand why Magic stays browser-native and intentionally thin
+- Read [Core Capabilities](./core-capabilities) to try the minimal runtime loop with live demos
 - Read [Lifecycle](./lifecycle) to learn each lifecycle stage
 - Read [Props & Data Flow](./props) to pass complex data safely

@@ -1,6 +1,6 @@
 # Core Concepts
 
-Magic reduces micro frontend delivery to a clear three-part model: transform a module, register it, and use it.
+Magic reduces micro frontend delivery to a clear three-part model: transform a module, register it, and use it. Behind that model is a broader design decision: **push delivery toward browser-native primitives, flatten framework differences into a shared tag contract, and keep advanced customization in upper layers instead of the kernel.**
 
 ## 1. Transform a module
 
@@ -57,6 +57,15 @@ Compared with solutions that orchestrate full-page applications, Magic leans tow
 - lower adoption cost
 - more direct browser runtime behavior
 - a unified consumption contract based on HTML tags
+
+## Design principles behind the model
+
+- **Web Components Plus**: preserve the native Custom Element contract and extend data passing without abandoning browser standards
+- **Thin bridge**: keep Core focused on the minimal runtime loop instead of baking orchestration into the foundation
+- **Modules as units**: let widgets, business panels, and remote modules all become valid delivery units
+- **Framework flattening**: let authors keep their preferred stack while consumers integrate through the same HTML contract
+
+If you want the deeper rationale, continue with [Design Philosophy](./design-philosophy).
 
 ## Good use cases
 

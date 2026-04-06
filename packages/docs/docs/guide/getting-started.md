@@ -60,5 +60,7 @@ import magic, { useProps } from '@magic-microservices/magic'
 ## 下一步
 
 - 阅读 [核心概念](./core-concepts) 了解 Magic Module 的整体模型
+- 阅读 [设计理念](./design-philosophy) 理解 Magic 为什么坚持浏览器原生与薄桥接层
+- 阅读 [核心能力](./core-capabilities) 直接上手运行时最小闭环与在线 Demo
 - 阅读 [生命周期](./lifecycle) 理解模块在挂载、更新、卸载过程中的职责
 - 阅读 [Props 与数据传递](./props) 学习如何传递复杂数据
