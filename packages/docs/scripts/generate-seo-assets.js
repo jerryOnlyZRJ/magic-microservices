@@ -13,7 +13,7 @@ const siteUrl =
   }`;
 
 const docsRoot = path.resolve(__dirname, "../docs");
-const publicDir = path.resolve(docsRoot, ".vitepress/public");
+const publicDir = path.resolve(docsRoot, "public");
 const sitemapPath = path.join(publicDir, "sitemap.xml");
 const robotsPath = path.join(publicDir, "robots.txt");
 const excludedPages = new Set([
