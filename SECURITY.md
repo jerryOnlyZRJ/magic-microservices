@@ -30,6 +30,10 @@ Security review currently focuses on dependency risk, Web Components runtime
 boundaries, sandbox behavior, cross-site scripting vectors, build and release
 tooling, and supply-chain issues.
 
+Public security-maintenance snapshots are tracked under
+[`docs/security`](./docs/security). The first dependency triage pass is
+[`dependency-audit-2026-05-31.md`](./docs/security/dependency-audit-2026-05-31.md).
+
 ## Disclosure
 
 Security issues are triaged privately first. Public disclosure should wait until
