@@ -33,6 +33,8 @@ tooling, and supply-chain issues.
 Public security-maintenance snapshots are tracked under
 [`docs/security`](./docs/security). The first dependency triage pass is
 [`dependency-audit-2026-05-31.md`](./docs/security/dependency-audit-2026-05-31.md).
+Users migrating from the archived upstream should also review the
+[`migration guide`](./docs/migration/from-archived-upstream.md).
 
 ## Disclosure
 
