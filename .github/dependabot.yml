@@ -1,0 +1,59 @@
+# Dependabot keeps the maintained fork's dependency graph current enough for
+# security triage without requiring broad, manual dependency sweeps.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Shanghai"
+    labels:
+      - "dependencies"
+      - "security"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:15"
+      timezone: "Asia/Shanghai"
+    groups:
+      root-maintenance:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "security"
+
+  - package-ecosystem: "npm"
+    directory: "/packages/docs"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:30"
+      timezone: "Asia/Shanghai"
+    groups:
+      docs-maintenance:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "documentation"
+
+  - package-ecosystem: "npm"
+    directory: "/examples/magic-microservice-web"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:45"
+      timezone: "Asia/Shanghai"
+    groups:
+      example-maintenance:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "security"

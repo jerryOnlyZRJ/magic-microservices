@@ -21,6 +21,8 @@
 
 非安全问题请通过本仓库的 GitHub Issues 提交。涉及漏洞、利用细节或其他敏感安全信息时，请按照 [SECURITY.md](./SECURITY.md) 的流程私下报告，不要创建公开 issue。
 
+活跃维护者和维护职责记录在 [MAINTAINERS.md](./MAINTAINERS.md)。当前安全审计和迁移路线图通过 [issue #1](https://github.com/jerryOnlyZRJ/magic-microservices/issues/1) 跟踪。
+
 ## 概述
 
 一款基于 Web Components 的轻量级的微前端工厂函数。

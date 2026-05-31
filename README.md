@@ -26,6 +26,10 @@ Please report non-security issues through this repository's issue tracker. For
 security-sensitive reports, follow the process in [SECURITY.md](./SECURITY.md)
 instead of creating a public issue.
 
+The active maintainer and maintenance responsibilities are documented in
+[MAINTAINERS.md](./MAINTAINERS.md). The current security and migration roadmap
+is tracked in [issue #1](https://github.com/jerryOnlyZRJ/magic-microservices/issues/1).
+
 ## Overview
 
 A lightweight micro-frontends function factory based on Web Components.

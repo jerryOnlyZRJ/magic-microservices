@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bytedance/magic-microservices"
+    "url": "https://github.com/jerryOnlyZRJ/magic-microservices"
   },
   "keywords": ["magic", "microfrontends", "microservices", "web-components"],
   "author": {
     "name": "Ranjay Zheng",
     "email": "magic-microservices@bytedance.com"
   },
-  "license": "Apache-2.0",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
