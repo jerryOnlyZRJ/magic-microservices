@@ -1,3 +1,11 @@
+---
+name: Enhancement request
+about: Suggest an improvement or maintenance task
+title: "[Enhancement]: "
+labels: enhancement, triage
+assignees: ""
+---
+
 ## Enhancement Request
 
 **Is your feature request related to a problem? Please describe.**

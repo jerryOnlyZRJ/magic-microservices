@@ -14,6 +14,13 @@
 
 </div>
 
+## 维护状态
+
+这个 fork 是 [bytedance/magic-microservices](https://github.com/bytedance/magic-microservices)
+的持续维护版本。上游仓库因为公司侧治理原因，直接更新和发版受到限制并已归档；本仓库会继续承接缺陷修复、安全维护、文档更新和迁移指引。
+
+非安全问题请通过本仓库的 GitHub Issues 提交。涉及漏洞、利用细节或其他敏感安全信息时，请按照 [SECURITY.md](./SECURITY.md) 的流程私下报告，不要创建公开 issue。
+
 ## 概述
 
 一款基于 Web Components 的轻量级的微前端工厂函数。

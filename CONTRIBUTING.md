@@ -10,16 +10,13 @@ This project adheres to the [Contributor Covenant Code of Conduct](./CODE_OF_CON
 
 ### Reporting Issues
 
-If you discover a potential security issue, please **do not** create a public GitHub issue. Instead, report it via:
+If you discover a potential security issue, please **do not** create a public GitHub issue. Follow the private reporting process in [SECURITY.md](./SECURITY.md) instead.
 
-- [Bytedance Security Center](https://security.bytedance.com/src)
-- Email: [sec@bytedance.com](mailto:sec@bytedance.com)
-
-For non-security issues, please [open a GitHub Issue](https://github.com/bytedance/magic-microservices/issues) with a clear description.
+For non-security issues, please [open a GitHub Issue](https://github.com/jerryOnlyZRJ/magic-microservices/issues) with a clear description.
 
 ### Development Workflow
 
-We follow the [fork-branch-PR-review-approve](https://github.com/bytedance/magic-microservices) workflow:
+We follow the [fork-branch-PR-review-approve](https://github.com/jerryOnlyZRJ/magic-microservices) workflow:
 
 1. **Create an Issue** — Track your task with a GitHub Issue before starting work
 2. **Fork the repository** — Create a personal fork
@@ -83,4 +80,4 @@ BREAKING CHANGE: Minimum Vue version is now 3.4 due to use of defineModel()
 
 ### License
 
-By submitting a pull request, you agree that your contribution will be licensed under the [Apache License 2.0](./LICENSE).
+By submitting a pull request, you agree that your contribution will be licensed under the [MIT License](./LICENSE).

@@ -14,6 +14,18 @@ English | [简体中文](./README-zh_CN.md)
 
 </div>
 
+## Maintenance Status
+
+This fork is the actively maintained continuation of
+[bytedance/magic-microservices](https://github.com/bytedance/magic-microservices).
+The upstream repository is archived because direct updates and releases are
+limited by company-side governance, but this fork remains open for ongoing bug
+fixes, security maintenance, documentation updates, and migration guidance.
+
+Please report non-security issues through this repository's issue tracker. For
+security-sensitive reports, follow the process in [SECURITY.md](./SECURITY.md)
+instead of creating a public issue.
+
 ## Overview
 
 A lightweight micro-frontends function factory based on Web Components.
@@ -437,19 +449,18 @@ ReactDOM.render(
 
 ## Contribution
 
-Please check [Contributing](../../CONTRIBUTING.md) for more details.
+Please check [Contributing](./CONTRIBUTING.md) for more details.
 
 ## Code of Conduct
 
-Please check [Code of Conduct](../../CODE_OF_CONDUCT.md) for more details.
+Please check [Code of Conduct](./CODE_OF_CONDUCT.md) for more details.
 
 ## Security
 
-If you discover a potential security issue in this project, or think you may
-have discovered a security issue, we ask that you notify Bytedance Security via our [security center](https://security.bytedance.com/src) or [vulnerability reporting email](sec@bytedance.com).
-
-Please do **not** create a public GitHub issue.
+If you discover a potential security issue, please follow the private reporting
+process in [SECURITY.md](./SECURITY.md). Please do **not** create a public
+GitHub issue for vulnerabilities or exploit details.
 
 ## License
 
-This project is licensed under the [MIT License](../../LICENSE).
+This project is licensed under the [MIT License](./LICENSE).

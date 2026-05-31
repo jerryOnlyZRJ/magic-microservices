@@ -1,4 +1,15 @@
+---
+name: Bug report
+about: Report a reproducible non-security defect
+title: "[Bug]: "
+labels: bug, triage
+assignees: ""
+---
+
 ## Bug Report
+
+> Do not include vulnerability details in a public issue. Follow
+> [SECURITY.md](../../SECURITY.md) for security-sensitive reports.
 
 **Describe the bug**
 A clear and concise description of what the bug is.
