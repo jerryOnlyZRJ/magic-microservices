@@ -29,6 +29,8 @@ instead of creating a public issue.
 The active maintainer and maintenance responsibilities are documented in
 [MAINTAINERS.md](./MAINTAINERS.md). The current security and migration roadmap
 is tracked in [issue #1](https://github.com/jerryOnlyZRJ/magic-microservices/issues/1).
+Users of the archived upstream can start from the
+[migration guide](./docs/migration/from-archived-upstream.md).
 
 ## Overview
 
